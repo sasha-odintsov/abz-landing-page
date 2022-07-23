@@ -1,0 +1,17 @@
+.heading {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), // using gradient to darken the background
+    url(../../img/pexels-alexandr-podvalny-1227513.jpeg) no-repeat;
+    background-position: 50% 80%;
+    background-size: 220%;
+
+    .heading-content {
+        color: #fff;
+        width: 380px;
+        text-align: center;
+        padding: 164px 0;
+
+        .heading-txt {
+            margin: 21px 0 32px 0;
+        }
+    }
+}

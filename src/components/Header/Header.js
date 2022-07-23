@@ -1,6 +1,6 @@
-import './styles/Header.scss'
-import logo from './img/Logo.svg'
-import Button from './Button'
+import './Header.scss';
+import logo from '../../img/Logo.svg';
+import Button from '../Button/Button';
 
 function Header() {
     return(
@@ -10,8 +10,8 @@ function Header() {
                     <img src={logo} alt="logo" className="header-logo"/>
                 </div>
                 <div className="header-secondary-wrap">
-                    <Button type="yellow" txt="Users" />
-                    <Button type="yellow" txt="Sing up" />
+                    <Button type="yellow" txt="Users" clss="button"/>
+                    <Button type="yellow" txt="Sing up" clss="button"/>
                 </div>
             </div>
         </header>
