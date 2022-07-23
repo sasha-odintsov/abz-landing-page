@@ -1,0 +1,18 @@
+.header{
+    background-color: #fff;
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 13px 0;
+
+        .header-primary-wrap {
+            display: flex;
+            align-items: center;
+    
+            .header-logo {
+                width: 104px;
+            }
+        }
+    }
+}
