@@ -1,8 +1,8 @@
 import './Button.scss'
 
-function Button(props) {
+function Button({ click, style, txt }) {
     return(
-        <button type="button" className={props.clss}>{props.txt}</button>
+        <button type="button" className="button" onClick={click} style={style}>{txt}</button>
     )
 }
 

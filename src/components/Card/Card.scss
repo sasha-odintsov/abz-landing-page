@@ -1,0 +1,31 @@
+.card {
+    width: 370px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+
+    .card-img-wrap, .card-title {
+        margin: 0 0 20px 0;
+        
+        .card-img {
+            border-radius: 50%;
+            width: 70px;
+        }
+    }
+    
+    .card-img-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-title, .card-disc-item {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .card-disc-item {
+        margin: 0;
+    }
+}

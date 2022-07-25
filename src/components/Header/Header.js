@@ -10,8 +10,8 @@ function Header() {
                     <img src={logo} alt="logo" className="header-logo"/>
                 </div>
                 <div className="header-secondary-wrap">
-                    <Button type="yellow" txt="Users" clss="button"/>
-                    <Button type="yellow" txt="Sing up" clss="button"/>
+                    <Button txt={"Users"} />
+                    <Button txt={"Sing up"} />
                 </div>
             </div>
         </header>
