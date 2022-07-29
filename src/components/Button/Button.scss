@@ -13,3 +13,9 @@
     background-color: #FFE302;
     cursor: pointer;
 }
+
+.button:disabled,
+.button[disabled] {
+    background-color: #B4B4B4;
+    color: #fff;
+}

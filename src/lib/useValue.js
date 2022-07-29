@@ -9,12 +9,14 @@ function useValue() {
     const [value, setValue] = useState([]);
 
     useEffect(() => {
-        fetch(`https://frontend-test-assignment-api.abz.agency/api/v1/users?page=11&count=6`) 
+        fetch(`https://frontend-test-assignment-api.abz.agency/api/v1/users?page=6&count=6`) 
         .then((response) => response.json()) 
         .then((data) => { 
-            console.log(data);
-            setIsLoaded(true); 
-            setValue(data.users)
+                console.log(data);
+                if(data.success) { 
+                    setIsLoaded(true); 
+                    setValue(data.users)
+                } 
             },
             (error) => {
                 setIsLoaded(true);
@@ -26,8 +28,8 @@ function useValue() {
         console.log(error.message)
     } else if (!isLoaded) {
         return (
-            <Box sx={{ display: 'flex' }}>
-                <CircularProgress />
+            <Box sx={{ position: 'absolute', left: '0', right: '0', m: 'auto' }}>
+                <CircularProgress color='primary' size='48px' />
             </Box>
         )
     } else {

@@ -1,8 +1,8 @@
 import './Button.scss'
 
-function Button({ click, style, txt }) {
+function Button({ click, style, disabled, txt }) {
     return(
-        <button type="button" className="button" onClick={click} style={style}>{txt}</button>
+        <button type="submit" className="button" onClick={click} style={style} disabled={disabled} >{txt}</button>
     )
 }
 

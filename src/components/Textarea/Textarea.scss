@@ -1,0 +1,33 @@
+#input-file {
+    display: none;
+}
+
+.input-file-label, #file-name {
+    padding: 15px 13px;
+    display: block;
+    margin: 0;
+}
+
+.input-file-label {
+    border: 1px solid #000;
+    cursor: pointer;
+    border-radius: 5px 0 0 5px;
+}
+
+#file-name {
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    color: #7e7e7e;
+    width: 100%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.input-file-wrap {
+    width: 380px;
+    margin: 0 auto;
+    display: flex;
+}
