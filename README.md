@@ -1,8 +1,19 @@
-# Getting Started with Create React App
+# ABZ Landing page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a landing page where you can receive a GET request and send a POST request.
+
+Demo:
+
+## Up and Run
+
+```
+npm install
+npm start
+```
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 

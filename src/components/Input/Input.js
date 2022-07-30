@@ -8,8 +8,9 @@ import './Input.scss';
 import Textarea from '../Textarea/Textarea';
 import Button from '../Button/Button';
 import FormSuccess from '../FormSucess/FormSuccess';
-import { useState, useEffect } from 'react';
-import usePosition from '../../lib/usePosition'
+import { useState } from 'react';
+import usePosition from '../../lib/usePosition';
+import useToken from '../../lib/useToken';
 
 function Input() {
   const [title, setTitle] = useState('Upload your photo');
@@ -23,9 +24,10 @@ function Input() {
   const [errorPhone, setErrorPhone] = useState();
   const [errorFile, setErrorFile] = useState();
   const [styleFileInput, setStyleFileInput] = useState();
-  const [token, setToken] = useState();
+  // const [token, setToken] = useState();
   const [formSuccess, setFormSuccess] = useState();
-  const positions = usePosition()
+  const positions = usePosition();
+  const token = useToken();
  
   function handleSubmit(event) {
     event.preventDefault();
@@ -34,16 +36,19 @@ function Input() {
 
     if (name.length < 2 || name.length > 60) {
       setErrorName(true)
+      return;
     } else {
       setErrorName(false)
     }
     if (!email.match(patternEmail)) {
       setErrorEmail(true)
+      return;
     } else {
       setErrorEmail(false)
     }
     if (!phone.match(patternPhone)) {
       setErrorPhone(true)
+      return;
     } else {
       setErrorPhone(false)
     }
@@ -70,11 +75,11 @@ function Input() {
       console.error(error);
     });
   }
-  useEffect(() => {
-    fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token') 
-    .then((response) => response.json()) 
-    .then((data) => setToken(data.token)) 
-  }, [])
+  // useEffect(() => {
+  //   fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token') 
+  //   .then((response) => response.json()) 
+  //   .then((data) => setToken(data.token)) 
+  // }, [])
   function handleFileInput(event) {
     const file = event.target.files[0];
     setAddedFile(file)
@@ -93,7 +98,7 @@ function Input() {
 
   return (
     <>
-    <div className="input-wrapper">
+    <div className="secondary-wrapper">
       <Box
       onSubmit={handleSubmit}
       component="form"

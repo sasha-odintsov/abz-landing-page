@@ -3,8 +3,8 @@ import Button from '../Button/Button'
 
 function Heading() {
     return(
-        <div className="heading  wrapper">
-            <div className="heading-content wrapper">
+        <div className="heading">
+            <div className="heading-content secondary-wrapper">
                 <h1 className="title">
                     Test assignment for front-end developer
                 </h1>
