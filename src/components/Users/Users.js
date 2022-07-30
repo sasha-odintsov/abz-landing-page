@@ -27,8 +27,7 @@ function Users() {
     (error) => {
       setIsLoaded(true);
       setError(error);
-    }    
-    );
+    });
   }
 
   useEffect(() => {
@@ -41,34 +40,34 @@ function Users() {
 
   if (error) {
     console.log(error.message)
-    } else if (!isLoaded) {
-        return (
-          <Preloader />
-        )
-    } else {
-        return (
-          <>
-          <div className="section-content-items">
-            {users.map(el => (
-                <Card
-                key={el.id}
-                photo={el.photo}
-                name={el.name}
-                position={el.position}
-                email={el.email}
-                phone={el.phone}
-                />
-            ))}        
-          </div>
-          <Button 
-          txt={"Show more"} 
-          click={handleClick}
-          style={{width: 120}}
-          disabled={btnDisable}
-          />
-          </>
-        );
-    }
+  } else if (!isLoaded) {
+    return (
+      <Preloader />
+    )
+  } else {
+    return (
+      <>
+      <div className="section-content-items">
+        {users.map(el => (
+            <Card
+            key={el.id}
+            photo={el.photo}
+            name={el.name}
+            position={el.position}
+            email={el.email}
+            phone={el.phone}
+            />
+        ))}        
+      </div>
+      <Button 
+      txt={"Show more"} 
+      click={handleClick}
+      style={{ width: 120 }}
+      disabled={btnDisable}
+      />
+      </>
+    );
+  }
 }
 
 
