@@ -2,7 +2,7 @@
 
 This is a landing page where you can receive a GET request and send a POST request.
 
-Demo:
+Demo: https://abz-landing-page.netlify.app
 
 ## Up and Run
 

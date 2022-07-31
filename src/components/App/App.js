@@ -39,7 +39,7 @@ function App() {
         <Header />
         <Heading />
         <Section />
-        <Form/>
+        <Form />
       </ThemeProvider>
     </>
   );

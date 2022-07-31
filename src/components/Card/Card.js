@@ -1,6 +1,21 @@
 import './Card.scss';
 import imageCoverOnError from '../../lib/imageCoverOnError';
 import Tooltip from '@mui/material/Tooltip';
+import { styled } from "@mui/material/styles";
+
+const StyledTooltip = styled(({ className, ...props }) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+))
+(({ theme }) => ({
+    zIndex: theme.zIndex.tooltip + 1,
+    [`& .MuiTooltip-tooltip`]: {
+      fontSize: '1em',
+      lineHeight: '1.2',
+      backgroundColor: "rgba(0,0,0,0.9)",
+      margin: -15,
+      padding: '5px 15px'
+    }
+})); 
 
 function Card({ photo, name, position, email, phone }) {
     return(
@@ -8,14 +23,14 @@ function Card({ photo, name, position, email, phone }) {
             <div className="card-img-wrap">
                 <img src={photo} onError={imageCoverOnError} alt="colleague" className="card-img"/>
             </div>
-            <Tooltip title={name.length > 40 ? name : ''}>
+            <StyledTooltip title={name.length >= 40 ? name : ''}  followCursor placement="bottom-start">
                 <p className="card-title">{name}</p>
-            </Tooltip>
+            </StyledTooltip>
             <div className="card-disc">
                 <p className="card-disc-item">{position}</p>
-                <Tooltip title={email.length > 40 ? email : ''}>
+                <StyledTooltip title={email.length >= 40 ? email : ''} followCursor placement="bottom-start">
                     <p className="card-disc-item">{email}</p>
-                </Tooltip>
+                </StyledTooltip>
                 <p className="card-disc-item">{phone}</p>
             </div>
         </div>

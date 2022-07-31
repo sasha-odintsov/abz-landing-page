@@ -1,5 +1,5 @@
 import Input from '../Input/Input';
-import './Form.scss'
+import './Form.scss';
 
 function Form() {
     return(
