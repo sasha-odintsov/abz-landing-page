@@ -93,81 +93,83 @@ function Input() {
 
   return (
     <>
-    <div className="secondary-wrapper">
-      <Box
-      onSubmit={handleSubmit}
-      component="form"
-      sx={{
-        '& .MuiTextField-root': { 
-          m:'25px auto 0 auto', 
-          display: 'flex',  
-          width: '100%'
-        },
-        "& .MuiInputLabel-root": {
-          color: '#7e7e7e'
-        },
-        "& .MuiFormHelperText-root": {
-          fontSize: '14px'
-        }
-      }}
-      noValidate
-      autoComplete="off"
-      >
-        <TextField 
-        id="outlined-basic" 
-        label="Your name" 
-        variant="outlined" 
-        value={name} 
-        onChange={(event) => setName(event.target.value)}
-        error={errorName}
-        helperText={errorName ? "Name should be 2-60 characters" : " "}
-        />
-        <TextField 
-        id="outlined-basic" 
-        label="Email" 
-        variant="outlined" 
-        type="email" 
-        value={email} 
-        onChange={(event) => setEmail(event.target.value)}
-        error={errorEmail}
-        helperText={errorEmail ? "Invalid email" : " "}
-        />
-        <TextField
-        id="outlined-basic"
-        label="Phone"
-        type="text"
-        variant="outlined"
-        value={phone}
-        onChange={(event) => setPhone(event.target.value)}
-        error={errorPhone}
-        helperText={errorPhone ? "Phone number is not valid" : "+38 (XXX) XXX - XX - XX"}
-        />
-        <FormControl sx={{ m: '20px auto 45px auto', width: '100%'}}>
-          <p className="radio-title">Select your position</p>
-          <RadioGroup 
-          aria-labelledby="demo-radio-buttons-group-label"
-          defaultValue
-          name="radio-buttons-group"
-          sx={{"& .MuiFormControlLabel-root": {m: '0px -5px'},
-          }}
-          >
-            {positions.map((el)=>{
-              return <FormControlLabel 
-              key={el.id} 
-              value={el.id} 
-              control={<Radio sx={{ p: '5px', mr: '5px' }} />} 
-              label={el.name} 
-              onChange={(event) => setPosition(event.target.value)}/>
-            })}
-          </RadioGroup>
-        </FormControl>
-        <Textarea onChange={handleFileInput} title={title} style={styleFileInput}/>
-        <div className="input-file-error-wrap">
-          <p className="input-file-error">{errorFile}</p>
-        </div>
-        <Button txt={"Sign Up"} disabled={!name || !email || !phone || !position || !addedFile}/>
-      </Box>
-    </div>
+    {!formSuccess && 
+      <div className="secondary-wrapper">
+        <Box
+        onSubmit={handleSubmit}
+        component="form"
+        sx={{
+          '& .MuiTextField-root': { 
+            m:'25px auto 0 auto', 
+            display: 'flex',  
+            width: '100%'
+          },
+          "& .MuiInputLabel-root": {
+            color: '#7e7e7e'
+          },
+          "& .MuiFormHelperText-root": {
+            fontSize: '14px'
+          }
+        }}
+        noValidate
+        autoComplete="off"
+        >
+          <TextField 
+          id="outlined-basic" 
+          label="Your name" 
+          variant="outlined" 
+          value={name} 
+          onChange={(event) => setName(event.target.value)}
+          error={errorName}
+          helperText={errorName ? "Name should be 2-60 characters" : " "}
+          />
+          <TextField 
+          id="outlined-basic" 
+          label="Email" 
+          variant="outlined" 
+          type="email" 
+          value={email} 
+          onChange={(event) => setEmail(event.target.value)}
+          error={errorEmail}
+          helperText={errorEmail ? "Invalid email" : " "}
+          />
+          <TextField
+          id="outlined-basic"
+          label="Phone"
+          type="text"
+          variant="outlined"
+          value={phone}
+          onChange={(event) => setPhone(event.target.value)}
+          error={errorPhone}
+          helperText={errorPhone ? "Phone number is not valid" : "+38 (XXX) XXX - XX - XX"}
+          />
+          <FormControl sx={{ m: '20px auto 45px auto', width: '100%'}}>
+            <p className="radio-title">Select your position</p>
+            <RadioGroup 
+            aria-labelledby="demo-radio-buttons-group-label"
+            defaultValue
+            name="radio-buttons-group"
+            sx={{"& .MuiFormControlLabel-root": {m: '0px -5px'},
+            }}
+            >
+              {positions.map((el)=>{
+                return <FormControlLabel 
+                key={el.id} 
+                value={el.id} 
+                control={<Radio sx={{ p: '5px', mr: '5px' }} />} 
+                label={el.name} 
+                onChange={(event) => setPosition(event.target.value)}/>
+              })}
+            </RadioGroup>
+          </FormControl>
+          <Textarea onChange={handleFileInput} title={title} style={styleFileInput}/>
+          <div className="input-file-error-wrap">
+            <p className="input-file-error">{errorFile}</p>
+          </div>
+          <Button txt={"Sign Up"} disabled={!name || !email || !phone || !position || !addedFile}/>
+        </Box>
+      </div>
+    }
     {formSuccess && <FormSuccess />}
     </>
   );
