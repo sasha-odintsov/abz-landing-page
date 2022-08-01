@@ -77,15 +77,15 @@ function Input() {
   
   function handleFileInput(event) {
     const file = event.target.files[0];
-    setAddedFile(file)
     setTitle(file.name);
     if (file.size > 5000000 ) {
       setStyleFileInput({borderColor: '#CB3D40', color: '#000'})
       setErrorFile('Size must not exceed 5MB')
-      } else if(!["image/jpeg", "image/jpg"].includes(file.type)) {
-        setErrorFile('Allowed only jpg. or jpeg. extensions')
-        setStyleFileInput({borderColor: '#CB3D40', color: '#000'})
-      } else {
+    } else if(!["image/jpeg", "image/jpg"].includes(file.type)) {
+      setErrorFile('Allowed only jpg. or jpeg. extensions')
+      setStyleFileInput({borderColor: '#CB3D40', color: '#000'})
+    } else {
+      setAddedFile(file)
       setErrorFile('')
       setStyleFileInput({color: '#000'})
     }
@@ -162,10 +162,7 @@ function Input() {
               })}
             </RadioGroup>
           </FormControl>
-          <Textarea onChange={handleFileInput} title={title} style={styleFileInput}/>
-          <div className="input-file-error-wrap">
-            <p className="input-file-error">{errorFile}</p>
-          </div>
+          <Textarea onChange={handleFileInput} title={title} style={styleFileInput} errorFile={errorFile}/>
           <Button txt={"Sign Up"} disabled={!name || !email || !phone || !position || !addedFile}/>
         </Box>
       </div>
