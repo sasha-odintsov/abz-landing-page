@@ -65,7 +65,6 @@ function Input() {
     }) 
       .then((response) => response.json()) 
       .then(function(data) { 
-        console.log(data); 
         if(data.success) {  
           setFormSuccess(data.success)
         } 

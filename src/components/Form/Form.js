@@ -5,6 +5,7 @@ function Form() {
     return(
         <div className="form">
             <div className="form-content wrapper">
+            <a name="sing-up"></a>
                 <h2 className="title">
                     Working with POST request
                 </h2>

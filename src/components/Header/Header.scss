@@ -4,15 +4,21 @@
     .header-content {
         display: flex;
         justify-content: space-between;
-        padding: 13px 0;
+        padding: 5px 0;
 
         .header-primary-wrap {
             display: flex;
             align-items: center;
+            cursor: pointer;
     
             .header-logo {
-                width: 104px;
+                width: 90px;
             }
+        }
+
+        .header-secondary-wrap {
+            display: flex;
+            align-items: center;
         }
     }
 }

@@ -11,8 +11,7 @@ const StyledTooltip = styled(({ className, ...props }) => (
     [`& .MuiTooltip-tooltip`]: {
       fontSize: '1em',
       lineHeight: '1.2',
-      backgroundColor: "rgba(0,0,0,0.9)",
-      margin: -15,
+      backgroundColor: "rgba(0,0,0,0.8)",
       padding: '5px 15px'
     }
 })); 
@@ -23,12 +22,12 @@ function Card({ photo, name, position, email, phone }) {
             <div className="card-img-wrap">
                 <img src={photo} onError={imageCoverOnError} alt="colleague" className="card-img"/>
             </div>
-            <StyledTooltip title={name.length >= 40 ? name : ''}  followCursor placement="bottom-start">
+            <StyledTooltip title={name.length >= 40 ? name : ''} placement="bottom-start">
                 <p className="card-title">{name}</p>
             </StyledTooltip>
             <div className="card-disc">
                 <p className="card-disc-item">{position}</p>
-                <StyledTooltip title={email.length >= 40 ? email : ''} followCursor placement="bottom-start">
+                <StyledTooltip title={email.length >= 40 ? email : ''} placement="bottom-start">
                     <p className="card-disc-item">{email}</p>
                 </StyledTooltip>
                 <p className="card-disc-item">{phone}</p>
